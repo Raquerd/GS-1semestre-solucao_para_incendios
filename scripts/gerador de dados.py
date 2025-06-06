@@ -1,8 +1,8 @@
 import requests, json
 import pandas as pd
 
-latitude = -23.5558
-longitude = -46.6396
+latitude = -8.663648
+longitude = -56.109233
 
 start_date = "2024-06-02"
 end_date = "2025-06-02"  # coloque o período desejado
