@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "Lais Kurahashi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 67.2, "left": -14.36, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -86.1,
+      "left": 13.8,
+      "attrs": { "temperature": "12.4", "humidity": "50" }
+    },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": 329.1, "left": -89, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:0", "dht1:SDA", "purple", [ "h19.2", "v-172.8", "h-67.3" ] ],
+    [ "esp:GND.2", "dht1:GND", "green", [ "v0" ] ],
+    [ "esp:3V3", "dht1:VCC", "red", [ "v0" ] ],
+    [ "gas1:VCC", "esp:5V", "red", [ "h19.2", "v-77.7", "h-76.95" ] ],
+    [ "gas1:GND", "esp:GND.3", "black", [ "h76.8", "v-212" ] ],
+    [ "gas1:AOUT", "esp:4", "green", [ "h67.2", "v-134.4" ] ]
+  ],
+  "dependencies": {}
+}
